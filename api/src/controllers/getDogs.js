@@ -2,7 +2,6 @@ const axios = require("axios");
 require("dotenv").config();
 
 const getDogs = async (req, res) => {
-    const {name} = req.params;
     try {
         const { data } = await axios(`${process.env.URL_BASE}?api_key=${process.env.API_KEY}`);
         const obj = filterData(data);
