@@ -1,4 +1,4 @@
-const { postDogs } = require('./postDogs');
+const { postDogs } = require('../src/controllers/Dogs/postDogs');
 
 (async () => {
   try {

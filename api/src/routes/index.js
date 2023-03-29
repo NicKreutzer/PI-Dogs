@@ -4,7 +4,8 @@ const { getDogsBreed } = require('../controllers/Dogs/getDogsBreed');
 const { getDogsName } = require('../controllers/Dogs/getDogsName');
 const { getDogsRaza } = require('../controllers/Dogs/getDogsRaza');
 const { postDogs } = require('../controllers/Dogs/postDogs');
-const { getTemperaments } = require('../controllers/Temperaments/getTemperaments')
+const { getTemperaments } = require('../controllers/Temperaments/getTemperaments');
+const { saveApiDataTemp } = require('../controllers/Temperaments/saveApiDataTemp');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
@@ -60,7 +61,6 @@ router.get('/temperaments', async (req, res) => {
       res.status(400).json({ error: error.message });
     }
   });
-
   router.post('/dog', async (req, res) => {
     const { image, name, height, weight, life_span, temperamentID } = req.body;
     try {
@@ -72,6 +72,7 @@ router.get('/temperaments', async (req, res) => {
       res.status(400).json({ error: error.message });
     }
   });
+
 
 
 module.exports = router;

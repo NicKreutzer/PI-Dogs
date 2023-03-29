@@ -1,5 +1,5 @@
 
-const { saveApiDataTemp } = require('./saveApiDataTemp');
+const { saveApiDataTemp } = require('../src/controllers/Temperaments/saveApiDataTemp');
 
 saveApiDataTemp()
 .then((result) => {
