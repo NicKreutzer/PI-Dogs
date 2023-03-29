@@ -2,7 +2,7 @@
 const { getApiData, getDbData } = require('./saveApiData.js');
 
 const getDogsName = async (name) => {
-    if(!name) throw new Error('No breeds found');
+    if(!name) throw new Error('No dogs found');
     if(name.charAt(0) === name.charAt(0).toUpperCase()){
         //* Si el primer caracter es MAYUSCULA
         if(name.charAt(1) === name.charAt(1).toUpperCase()){
@@ -22,14 +22,14 @@ const getDogsName = async (name) => {
     const resDb = await getDbData();
     const data = resApi.concat(resDb);
     if (data.length === 0) {
-        throw new Error('No breeds found');
+        throw new Error('No dogs found');
     }
-    console.log(data);
+    //console.log(data);
     const dog = data.filter((a) => a.name.toLowerCase() === name.toLowerCase());
     if (dog.length) {
         return dog;
       } else {
-        throw new Error('Breed not found.');
+        throw new Error('Dog not found.');
       }
 };
 

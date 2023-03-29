@@ -29,6 +29,10 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
    },
+//    breed_group: {
+//     type: DataTypes.STRING,
+//     allowNull: false,
+//  },
   },
   { timestamps: false }
   );

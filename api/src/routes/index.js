@@ -1,9 +1,10 @@
 const { Router } = require('express');
-const { getDogs } = require('../controllers/Dog/getDogs');
-const { getDogsName } = require('../controllers/Dog/getDogsName');
-const { getDogsRaza } = require('../controllers/Dog/getDogsRaza');
-const { postDogs } = require('../controllers/Dog/postDogs');
-const { getTemperaments } = require('../controllers/Temperament/getTemperaments')
+const { getDogs } = require('../controllers/Dogs/getDogs');
+const { getDogsBreed } = require('../controllers/Dogs/getDogsBreed');
+const { getDogsName } = require('../controllers/Dogs/getDogsName');
+const { getDogsRaza } = require('../controllers/Dogs/getDogsRaza');
+const { postDogs } = require('../controllers/Dogs/postDogs');
+const { getTemperaments } = require('../controllers/Temperaments/getTemperaments')
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
@@ -40,6 +41,16 @@ router.get('/dogs/name', async (req, res) => {
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
+});
+router.get('/dogs/breed', async (req, res) => {
+  //* Para buscar en Thunder => parameter = name --- value = el nombre que querramos buscar.
+  const { name } = req.query;
+  try {
+      const result = await getDogsBreed(name);
+      return res.status(200).json(result);
+  } catch (error) {
+      res.status(400).json({ error: error.message });
+  }
 });
 router.get('/temperaments', async (req, res) => {
     try {

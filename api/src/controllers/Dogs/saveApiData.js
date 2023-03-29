@@ -17,6 +17,7 @@ const getApiData = async () => {
                 weight: res.weight.metric,
                 life_span: res.life_span,
                 temperament: res.temperament,
+                breed_group: res.breed_group
             };
         }));
         let allDogs = [];
@@ -39,7 +40,7 @@ const getDbData = async () => {
         }
     })
     return res;
-}
+};
 
 module.exports = {
     getApiData,
