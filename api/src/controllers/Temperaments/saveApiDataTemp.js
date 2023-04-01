@@ -18,7 +18,7 @@ const getApiDataTemp = async () => {
             });
             return temperaments;
         }, []);
-        console.log(allTemps);
+        //console.log(allTemps);
         return allTemps;
     } catch (error) {
         return { error: error.message };

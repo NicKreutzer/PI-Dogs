@@ -7,8 +7,8 @@ const getDogsRaza = async(id) => {
     const allDogsApi = await getApiData();
     //console.log(allDogsApi);
     const res = allDogsApi.filter((a) => a.id == id);
+    console.log(res);
     if(res.length){
-      console.log(res);
       return res[0]
     } else {
       const allDogsDb = await getDbData();
