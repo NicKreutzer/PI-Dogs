@@ -1,5 +1,5 @@
 
-import { createState, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk'; // Para hacer peticiones al servidor, traductor.
 import reducer from './reducer';
 

@@ -74,6 +74,7 @@ import {
         return async(dispatch) => {
             const res = await axios(`http://localhost:3001/dogs/${id}`);
             const data = res.data;
+            console.log(data);
             return dispatch({
                 type: GET_DOG_DETAIL,
                 payload: data

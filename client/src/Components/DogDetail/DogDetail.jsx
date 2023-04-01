@@ -6,23 +6,27 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getDogDetail, cleanDetail } from '../../Redux/actions';
 import style from './DogDetail.module.css';
 
-const dogDetail = () => {
+const DogDetail = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const { name, image, height, weight, life_span, temperament, Temperaments } = useSelector((state) => state.dogDetail);
 
+    //console.log(name)
     useEffect(() => {
         dispatch(getDogDetail(id));
         return () => dispatch(cleanDetail())
     }, [dispatch, id]);
+    
 
     return(
         <div>
-            <Link to="/home">Back</Link>
-            <div>
-                <img src={image} alt={name}></img>
-                <h1>{name}</h1>
-                <div>
+            <Link to="/home" className={style.btn}>Back</Link>
+                <h1 className={style.title}>{name}</h1>
+            <div className={style.container}>
+                <div className={style.imgColumn}>
+                    <img src={image} alt={name} className={style.img}></img>
+                </div>
+                <div className={style.details}>
                     <h3>Height: </h3><p>{height}</p>
                     <h3>Weight: </h3><p>{weight}</p>
                     <h3>Life span: </h3><p>{life_span}</p>
@@ -33,4 +37,4 @@ const dogDetail = () => {
     )
 };
 
-export default dogDetail;
+export default DogDetail;

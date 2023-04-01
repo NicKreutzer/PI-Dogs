@@ -114,7 +114,7 @@ const reducer = (state = initialState, action) => {
         case GET_DOG_DETAIL:
             return {
                 ...state,
-                dogDetail: action.payload[0]
+                dogDetail: action.payload,
             };
         case ADD_DOG:
             const newDog = state.allDogs.slice();

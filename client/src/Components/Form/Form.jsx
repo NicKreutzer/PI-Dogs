@@ -1,13 +1,12 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector, connect } from 'react-redux';
-import { useState, useEffect } from 'react';
-import { addDog, getAllDogs, getAllTemperaments } from '../../redux/actions';
+import { addDog, getAllDogs, getAllTemperaments } from '../../Redux/actions';
 import { Link } from 'react-router-dom';
 import validate from './Validation';
 import style from './Form.module.css';
 
-const form = () => {
+export const Form = () => {
     const allTemperaments = useSelector((state) => state.allTemperaments);
     const dispatch = useDispatch('');
     const [form, setForm] = useState({
@@ -132,4 +131,4 @@ const dispatchDog = (dispatch) => {
         addDog: (dog) => {dispatch(addDog(dog))}
     };
 };
-export default connect(null, dispatchDog)(form);
+export default connect(null, dispatchDog)(Form);

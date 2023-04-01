@@ -1,0 +1,26 @@
+.container{
+    /*background-image: ;*/
+    /* background-size: 50%;
+    background-position: center;
+    background-repeat: repeat; */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+.title{
+    font-size: 45px;
+}
+.img{
+    width: 90%;
+    height: 90%;
+    border-radius: 200px;
+}
+.imgColumn{
+    text-align: center;
+    grid-column: 1; /* La imagen se ubica en la primera columna */
+}
+.details{
+    text-align: center;
+    grid-column: 2; /* Los detalles se ubican en la segunda columna */
+    font-size: 20px;
+}
