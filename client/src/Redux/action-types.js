@@ -9,3 +9,5 @@ export const ADD_DOG = 'ADD_DOG';
 export const GET_DOGS_NAME = 'GET_DOGS_NAME';
 export const GET_ALL_TEMPERAMENTS = 'GET_ALL_TEMPERAMENTS';
 export const CLEAN_DETAIL = 'CLEAN_DETAIL';
+export const GET_DOGS_BREED = 'GET_DOGS_BREED';
+export const CLEAN_FILTER = 'CLEAN_FILTER';

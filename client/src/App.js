@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       {/* {location.pathname !== "/" && <Nav/>} */}
       <Routes>
-        <Route exact path= "/landing" element={<LandingPage/>}></Route>
+        <Route exact path= "/" element={<LandingPage/>}></Route>
         <Route exact path= "/home" element={<Home/>}></Route>
         <Route exact path= "/dogs/:id" element={<DogDetail/>}></Route>
         <Route exact path="/form" element={<Form/>}></Route>

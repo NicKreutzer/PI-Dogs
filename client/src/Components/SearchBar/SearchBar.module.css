@@ -1,0 +1,36 @@
+.search {
+    float: right;
+}
+.search button {
+    margin-top: 8px;
+    float: left;
+    margin-right: 20px;
+    background-color: black;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 12px;
+}
+.search button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    box-shadow: 2px 2px 2px 2px black;
+}
+.search input {
+    float: left;
+    margin-left: -170px;
+    margin-top: 10px;
+    padding: 5px 5px;
+    color: black;
+    border: 1px black solid;
+    width: 150%;
+    height: 18px;
+    border-radius: 20px;
+}
+
+/* .btn_detail{
+    float: left;
+} */

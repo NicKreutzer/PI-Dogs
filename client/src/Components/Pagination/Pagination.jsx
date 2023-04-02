@@ -24,10 +24,10 @@ const Pagination = ({ currentPage, setCurrentPage, max}) => {
     };
 
     return(
-        <div>
-            <button disabled={currentPage <= 1} onClick={previousPage}>Prev</button>
+        <div className={style.container}> 
+            <button disabled={currentPage <= 1} onClick={previousPage}>◄</button>
             <input onChange={(e) => onChange(e)} name="page" value={input}/> <p>of {max}</p>
-            <button onClick={nextPage} disabled={currentPage >= max}>Next</button>
+            <button onClick={nextPage} disabled={currentPage >= max}>►</button>
         </div>
     )
 };

@@ -5,6 +5,7 @@ import { addDog, getAllDogs, getAllTemperaments } from '../../Redux/actions';
 import { Link } from 'react-router-dom';
 import validate from './Validation';
 import style from './Form.module.css';
+import HomeLogo from '../../Components/HomeLogo.png'
 
 export const Form = () => {
     const allTemperaments = useSelector((state) => state.allTemperaments);
@@ -64,12 +65,12 @@ export const Form = () => {
     }, [dispatch]);
     
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
-                <Link to="/home">
-                    <button>Home</button>
+        <div className={style.container}>
+            <form onSubmit={handleSubmit} className={style.form}>
+                <Link to="/home" className={style.btnHome}>
+                    <button><img src= {HomeLogo} alt= "Home" width={60}></img></button>
                 </Link>
-                <div>
+                <div className={style.formContainer}>
                     <h1>Add Dogs Form.</h1>
                     <label>Image 
                         <input 
@@ -113,10 +114,10 @@ export const Form = () => {
                         value={form.id} 
                         key={form.id}>{allTemperaments?.map((a) =>(
                             <option key={a.name} value={a.name}>{a.name}</option>))}</select>
-                            <div>
+                            <div className={style.btnSelect}>
                                 {Array.isArray(form.temperamentID) 
                                 ? form.temperamentID.map((a) => 
-                                <button type="button" key={a.name} value={a.name}></button>) 
+                                <button type="button" key={a.name} value={a.name} className={style.btn}>Add Dog</button>) 
                                 : null}
                             </div>
                     </label>

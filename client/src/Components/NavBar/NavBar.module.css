@@ -1,0 +1,28 @@
+.navBar{
+    background-color: white;
+    border-radius: 30px;
+    margin: 20px;
+    margin-top:10px;
+    border: 2px black solid;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    }
+    .btn{
+        margin-left: 20px;
+        margin-top: 8px;
+        float: left;
+        background-color: black;
+        border-radius: 20px;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 12px;
+    }
+    .btn:hover{
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        box-shadow: 2px 2px 2px 2px black;
+    }

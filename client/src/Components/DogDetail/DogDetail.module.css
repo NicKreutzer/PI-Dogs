@@ -7,6 +7,14 @@
     grid-template-columns: 1fr 2fr;
     align-items: center;
 }
+.btn{
+    border: none;
+    background-color: transparent;
+    padding-top: 10px;
+}
+.btn:hover{
+    cursor: pointer;
+}
 .title{
     font-size: 45px;
 }

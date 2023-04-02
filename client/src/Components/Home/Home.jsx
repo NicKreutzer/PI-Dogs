@@ -7,7 +7,8 @@ import {
     orderDogs, 
     orderbyWeight, 
     filterByTemperaments, 
-    filterFromDogs } from '../../Redux/actions';
+    filterFromDogs,
+    cleanFilter } from '../../Redux/actions';
 import DogCard from '../DogCard/DogCard';
 import Pagination from '../Pagination/Pagination';
 import NavBar from '../NavBar/NavBar';
@@ -43,9 +44,10 @@ export const Home = () => {
         dispatch(filterFromDogs(e.target.value));
         setOrder(e.target.value);
     };
-    const handleSubmit = (e) => {
+    const handleClean = (e) => {
         e.preventDefault();
-        dispatch(getAllDogs());
+        dispatch(cleanFilter(e.target.value));
+        setOrder(e.target.value);
     };
     useEffect(() => {
         dispatch(getAllDogs());
@@ -53,28 +55,29 @@ export const Home = () => {
     }, [dispatch]);
 
     return(
-        <div>
+        <div className={style.home}>
             <NavBar/>
             <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} max={max}/>
-            <select onChange={handleOrder}>
+            <button type="submit" onClick={handleClean} className={style.btnClean}>Clean Filters</button>
+            <select onChange={handleOrder} className={style.filter}>
                 <option value="All">Order By Name</option>
                 <option value="A-Z">A-Z</option>
                 <option value="Z-A">Z-A</option>
             </select>
-            <select onChange={handleOrderByWeight}>
+            <select onChange={handleOrderByWeight} className={style.filter}>
                 <option value="All">Order By Weight</option>
                 <option value="higher-weight">Higher Weight</option>
                 <option value="lower-weight">Lower Weight</option>
             </select>
 
-            <select onChange={handleFilterByTemperament}>
+            <select onChange={handleFilterByTemperament} className={style.filter}>
                 <option value="Filter-By-Temperaments" key="Filter-by-Temperaments">Filter By Temperaments</option>
                 <option value="All" key="All">All</option>
                 {allTemperaments.map((a) => (
                     <option value={a.name} key={a.name}>{a.name}</option>
                 ))}
             </select>
-            <select onChange={handleFilterFromDogs}>
+            <select onChange={handleFilterFromDogs} className={style.filter}>
                 <option value="Filter-From-Dog">Filter From Dog</option>
                 <option value="All">All</option>
                 <option value="db">Formulario</option>

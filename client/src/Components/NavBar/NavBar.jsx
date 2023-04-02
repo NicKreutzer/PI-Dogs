@@ -6,9 +6,9 @@ import style from '../NavBar/NavBar.module.css';
 
 const NavBar = () => {
     return(
-        <div>
+        <div className={style.navBar}>
             <Link to="/form">
-                <button>Add Dog Form</button>
+                <button className={style.btn}>Add Dog Form</button>
             </Link>
             <SearchBar/>
         </div>

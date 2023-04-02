@@ -8,7 +8,9 @@ import {
     FILTER_BY_TEMPERAMENTS, 
     FILTER_FROM_DOGS, ADD_DOG, 
     GET_DOGS_NAME, GET_ALL_TEMPERAMENTS, 
-    CLEAN_DETAIL } from './action-types';
+    CLEAN_DETAIL,
+    GET_DOGS_BREED, 
+    CLEAN_FILTER} from './action-types';
 
     export const getAllDogs = () => {
         return async(dispatch) => {
@@ -70,6 +72,21 @@ import {
             };
         };
     };
+    export const getDogsBreed = (breed) => {
+        return async(dispatch) => {
+            try {
+                const res = await axios(`http://localhost:3001/dogs/breed?breed=${breed}`);
+                const data = res.data;
+                return await dispatch({
+                    type: GET_DOGS_BREED,
+                    payload: data
+                })
+            } catch (error) {
+                alert('No breed found.')
+                return getAllDogs();
+            };
+        };
+    };
     export const getDogDetail = (id) => {
         return async(dispatch) => {
             const res = await axios(`http://localhost:3001/dogs/${id}`);
@@ -94,5 +111,10 @@ import {
     export const cleanDetail = () => {
         return {
             type: CLEAN_DETAIL
+        };
+    };
+    export const cleanFilter = () => {
+        return{
+            type: CLEAN_FILTER
         };
     };
