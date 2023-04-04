@@ -5,7 +5,7 @@ import { addDog, getAllDogs, getAllTemperaments } from '../../Redux/actions';
 import { Link } from 'react-router-dom';
 import validate from './Validation';
 import style from './Form.module.css';
-import HomeLogo from '../../Components/HomeLogo.png'
+import HomeLogo from '../../Components/Fotos/HomeLogo.png'
 
 export const Form = () => {
     const allTemperaments = useSelector((state) => state.allTemperaments);

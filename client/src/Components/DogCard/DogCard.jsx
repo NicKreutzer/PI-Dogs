@@ -9,8 +9,8 @@ const DogCard = ({id, name, image, temperament, weight, Temperaments}) => {
                 <img src={image} alt={name} width={250}/>
             </div>
             <Link to={`/dogs/${id}`} className={style.Link}><h2>{name}</h2></Link>
-            <h4>Weight</h4>
-            <p>{weight}</p>
+            <h3>Weight</h3>
+            <h3>{weight}</h3>
             {/* <h4>Temperament</h4>
             <p>{temperament?temperament:Temperaments?.map((a) => a.name)}</p> */}
         </div>

@@ -1,20 +1,22 @@
 .container{
-    /*background-image: */
+    background-image: url('../Fotos/Collage1.jpg');
     height: 100vh;
 	background-color: black;
     background-size:20%;
 	background-position: center;  
-	background-repeat: repeat;  
+	background-repeat: repeat;
+    background-size:contain;
 }
 .data{
-padding-bottom: 10px;
-border-radius:10px;
-display: inline-block;
-box-shadow: 0 0 0.2rem rgb(12 12 12), 0 0 0.2rem rgba(16, 15, 15, 0.318), 0 0 2rem #050a06;
-margin-top: 40px;
-margin-bottom: 40px;
-background-color: rgba(191, 245, 242, 0.998);
-width: 500px;
+    padding-bottom: 10px;
+    border-radius:10px;
+    display: inline-block;
+    /* box-shadow: 0 0 0.2rem rgb(12 12 12), 0 0 0.2rem rgba(16, 15, 15, 0.318), 0 0 2rem #050a06; */
+    margin-top: 130px;
+    margin-bottom: 50px;
+    /* background-color: rgba(191, 245, 242, 0.998); */
+    background-color: transparent;
+    width: 500px;
 }
 .data h1{
     color: black;
@@ -23,7 +25,9 @@ width: 500px;
 }
 .data h3{
     color: black;
-    font-family:monospace
+    font-family:monospace;
+    font-weight: bolder;
+    font-size: 20px;
 }
 .btn button{
     background-color: black;

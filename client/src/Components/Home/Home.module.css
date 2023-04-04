@@ -6,13 +6,14 @@
     gap: 5px;
     width: fit-content;
     height: fit-content;
+    font-weight: bolder;
 }
 .home{
-   /* background-image: */
-    height: 103vh;
-	/* background-color: black; */
+    background-image: url('../Fotos/GrassT.jpg');
+    height: 100vh;
+	background-color: black;
     background-size:50%;
-	background-position: center;  
+	background-size: cover;
 	background-repeat: repeat;  
     margin-top: -40px;
     background-attachment: fixed;

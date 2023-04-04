@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { getDogDetail, cleanDetail } from '../../Redux/actions';
 import style from './DogDetail.module.css';
-import atras from '../../Components/atras.png'
+import atras from '../../Components/Fotos/atras.png'
 
 const DogDetail = () => {
     const { id } = useParams();
@@ -20,7 +20,7 @@ const DogDetail = () => {
     
 
     return(
-        <div>
+        <div className={style.back}>
             <Link to="/home"><button className={style.btn}><img src= {atras} alt= "Home" width={35}></img></button></Link>
                 <h1 className={style.title}>{name}</h1>
             <div className={style.container}>
