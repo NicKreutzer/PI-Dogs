@@ -20,5 +20,16 @@ const getDogs = async () => {
         return { error: error.message };
     }
 };
+//! getDogs con promesa.
+/*const getDogs = () => {
+    return Promise.all([getDbData(), getApiData()])
+        .then(([allDogsDb, allDogsApi]) => {
+            return allDogsApi.concat(allDogsDb);
+        })
+        .catch(error => {
+            return { error: error.message };
+        });
+};*/
+
 
 module.exports = { getDogs };

@@ -17,7 +17,7 @@ const getApiData = async () => {
                 weight: res.weight.metric,
                 life_span: res.life_span,
                 temperament: res.temperament,
-                //breed_group: res.breed_group
+                breed_group: res.breed_group
             };
         }));
         let allDogs = [];
@@ -30,6 +30,28 @@ const getApiData = async () => {
         return { error: error.message }
     }
 };
+//! Promise.
+/*const getApiData = () => {
+    return axios(`${process.env.URL_BASE}?api_key=${process.env.API_KEY}`)
+      .then((response) => {
+        const dogs = response.data.map((res) => {
+          return {
+            id: res.id,
+            image: res.image.url,
+            name: res.name,
+            height: res.height.metric,
+            weight: res.weight.metric,
+            life_span: res.life_span,
+            temperament: res.temperament,
+            breed_group: res.breed_group,
+          };
+        });
+        return dogs;
+      })
+      .catch((error) => {
+        return { error: error.message };
+      });
+  };*/
 
 //! Info de la DB.
 const getDbData = async () => {

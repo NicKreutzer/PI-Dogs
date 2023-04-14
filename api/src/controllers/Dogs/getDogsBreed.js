@@ -18,13 +18,32 @@ const getDogsBreed = async (breed) => {
         breed = (breed.charAt(0)).toUpperCase() + breed.slice(1);
         //* Paso a MAYUSCULA el primer caracter
     }
+    //! Promise.
+    /*return Promise.all([getApiData(), getDbData()])
+    .then(([resApi, resDb]) => {
+      const data = resApi.concat(resDb);
+      if (data.length === 0) {
+        throw new Error('No breeds found');
+      }
+      console.log(data);
+      const dog = data.filter((a) => a.breed_group && a.breed_group.toLowerCase() === breed.toLowerCase());
+      console.log(dog)
+      if (dog.length) {
+        return dog;
+      } else {
+        throw new Error('Breed not found.');
+      }
+    })
+    .catch((error) => {
+      throw new Error(error.message);
+    });*/
     const resApi = await getApiData();
     const resDb = await getDbData();
     const data = resApi.concat(resDb);
     if (data.length === 0) {
         throw new Error('No breeds found');
     }
-    //console.log(data);
+    console.log(data);
     const dog = data.filter((a) => a.breed_group && a.breed_group.toLowerCase() === breed.toLowerCase());
     console.log(dog)
     if (dog.length) {

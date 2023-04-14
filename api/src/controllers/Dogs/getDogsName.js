@@ -33,4 +33,37 @@ const getDogsName = async (name) => {
       }
 };
 
+//! Promise.
+/*const getDogsName = (name) => {
+    return new Promise(async (resolve, reject) => {
+    try {
+        if(!name) throw new Error('No dogs found');
+        if(name.charAt(0) === name.charAt(0).toUpperCase()){
+        if(name.charAt(1) === name.charAt(1).toUpperCase()){
+        name = name.toLowerCase()
+        name = (name.charAt(0)).toUpperCase() + name.slice(1);
+       }
+    };
+    if(name.charAt(0) === name.charAt(0).toLowerCase()){
+        name = (name.charAt(0)).toUpperCase() + name.slice(1);
+    }
+    const resApi = await getApiData();
+    const resDb = await getDbData();
+    const data = resApi.concat(resDb);
+    if (data.length === 0) {
+        throw new Error('No dogs found');
+    }
+    //console.log(data);
+    const dog = data.filter((a) => a.name.toLowerCase() === name.toLowerCase());
+    if (dog.length) {
+        resolve(dog);
+    } else {
+        throw new Error('Dog not found.');
+    }
+    } catch (error) {
+    reject(error);
+    }
+    });
+    };*/
+
 module.exports = { getDogsName };

@@ -32,6 +32,16 @@ router.get('/dogs/name', async (req, res) => {
       res.status(400).json({ error: error.message });
   }
 });
+router.get('/dogs/breed', async (req, res) => {
+  //* Para buscar en Thunder => parameter = name --- value = el nombre que querramos buscar.
+  const { breed } = req.query;
+  try {
+      const result = await getDogsBreed(breed);
+      return res.status(200).json(result);
+  } catch (error) {
+      res.status(400).json({ error: error.message });
+  }
+});
 router.get('/dogs/:id', async (req, res) => {
     const { id } = req.params;
     try {
@@ -42,16 +52,6 @@ router.get('/dogs/:id', async (req, res) => {
     } catch (error) {
         return res.status(400).json({ error: error.message});
     }
-});
-router.get('/dogs/breed', async (req, res) => {
-  //* Para buscar en Thunder => parameter = name --- value = el nombre que querramos buscar.
-  const { name } = req.query;
-  try {
-      const result = await getDogsBreed(name);
-      return res.status(200).json(result);
-  } catch (error) {
-      res.status(400).json({ error: error.message });
-  }
 });
 router.get('/temperaments', async (req, res) => {
     try {
