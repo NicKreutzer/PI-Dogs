@@ -8,7 +8,7 @@ import style from '../SearchBar/SearchBar.module.css';
 const SearchBar = () => {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
-    const [breed, setBreed] = useState('');
+    // const [breed, setBreed] = useState('');
 
     function handleInputChange(e) {
         e.preventDefault();
@@ -41,7 +41,6 @@ const SearchBar = () => {
         <div className={style.search}>
             <input value={name} type="text" placeholder="Search here..." onChange={handleInputChange}/>
             <button type="submit" onClick={handleSubmit}>Search</button>
-            {/* <button type="submit" onClick={handleSubmit2}>Breed</button> */}
         </div>
     )
 };

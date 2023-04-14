@@ -4,7 +4,6 @@ import style from '../Pagination/Pagination.module.css';
 
 const Pagination = ({ currentPage, setCurrentPage, max}) => {
     const [input, setInput] = useState(1);
-
     const nextPage = () => {
         setInput(input +1);
         setCurrentPage(currentPage +1);
@@ -17,12 +16,11 @@ const Pagination = ({ currentPage, setCurrentPage, max}) => {
         setCurrentPage(e.target.value);
         if(e.target.value < 1 || e.target.value > Math.ceil(max) || isNaN(e.target.value)){
             setCurrentPage(1);
-            setInput(1);
+            setInput();
         } else {
             setCurrentPage(e.target.value)
         }
     };
-
     return(
         <div className={style.container}> 
             <button disabled={currentPage <= 1} onClick={previousPage}>◄</button>
