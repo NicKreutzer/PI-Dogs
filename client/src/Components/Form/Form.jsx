@@ -5,7 +5,8 @@ import { addDog, getAllDogs, getAllTemperaments } from '../../Redux/actions';
 import { Link } from 'react-router-dom';
 import validate from './Validation';
 import style from './Form.module.css';
-import HomeLogo from '../../Components/Fotos/HomeLogo.png'
+import HomeLogo from '../../Components/Fotos/HomeLogo.png';
+
 
 export const Form = () => {
     const allTemperaments = useSelector((state) => state.allTemperaments);
@@ -78,49 +79,60 @@ export const Form = () => {
                         value={form.image} 
                         name="image" 
                         placeholder="Image URL..." 
-                        onChange={handleChange}></input></label>
+                        onChange={handleChange}></input>
+                        <p style={{color: 'red'}}>{errors.image}</p>
+                        </label>
                     <label>Name 
                         <input 
                         type="text" 
                         name="name" 
                         value={form.name} 
                         onChange={handleChange} 
-                        placeholder="Name..."></input></label>
+                        placeholder="Name..."></input>
+                        <p style={{color: 'red'}}>{errors.name}</p>
+                        </label>
                     <label>Height 
                         <input 
                         type="text" 
                         name="height" 
                         value={form.height} 
                         onChange={handleChange} 
-                        placeholder="Height..."></input></label>
+                        placeholder="Height..."></input>
+                        <p style={{color: 'red'}}>{errors.height}</p>
+                        </label>
                     <label>Weight 
                         <input 
                         type="text" 
                         name="weight" 
                         value={form.weight} 
                         onChange={handleChange} 
-                        placeholder="Weight..."></input></label>
+                        placeholder="Weight..."></input>
+                        <p style={{color: 'red'}}>{errors.weight}</p>
+                        </label>
                     <label>Life Span 
                         <input 
                         type="text" 
                         name="life_span" 
                         value={form.life_span} 
                         onChange={handleChange} 
-                        placeholder="Life Span..."></input></label>
+                        placeholder="Life Span..."></input>
+                        <p style={{color: 'red'}}>{errors.life_span}</p></label>
                     <label>Temperaments 
                         <select 
                         name="temperaments" 
                         onChange={handleSelectTemperaments} 
                         value={form.id} 
-                        key={form.id}>{allTemperaments?.map((a) =>(
-                            <option key={a.name} value={a.name}>{a.name}</option>))}</select>
+                        key={form.id}
+                        > {allTemperaments?.map((e) =>(
+                            <option key={e.name} value={e.name}>{e.name}</option>))}</select>
                             <div className={style.btnSelect}>
                                 {Array.isArray(form.temperamentID) 
-                                ? form.temperamentID.map((a) => 
-                                <button type="button" key={a.name} value={a.name} className={style.btn}>Add Dog</button>) 
+                                ? form.temperamentID.map((e) => 
+                                <button type="button" key={e.name} value={e.name}/*onClick={handleSubmit}*/>{e}</button>) 
                                 : null}
                             </div>
                     </label>
+                    <div><button type="submit"  className={style.btn} >Add Dog</button></div>
                 </div>
             </form>
         </div>

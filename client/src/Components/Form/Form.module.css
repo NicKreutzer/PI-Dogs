@@ -1,6 +1,6 @@
 .container{
     background-image: url('../Fotos/SiluetteT.jpg');
-    height: 100vh;
+    height: 125vh;
 	background-color: black;
     background-size:20%;
 	background-position: center;  
@@ -37,7 +37,7 @@ form {
     margin-left: -10px;
     font-size: 15px;
 }
-.btn button{
+.btn{
     margin-top: 18px;
     margin-bottom: 15px;
     background-color: black;

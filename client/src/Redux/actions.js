@@ -91,7 +91,7 @@ import {
         return async(dispatch) => {
             const res = await axios(`http://localhost:3001/dogs/${id}`);
             const data = res.data;
-            console.log(data);
+            //console.log(data);
             return dispatch({
                 type: GET_DOG_DETAIL,
                 payload: data
@@ -100,12 +100,16 @@ import {
     };
     export const addDog = (payload) => {
         return async(dispatch) => {
-            const res = axios('http://localhost:3001/dog', payload);
-            const data = res.data;
-            return await dispatch({
-                type: ADD_DOG,
-                payload: data
-            });
+            try {
+                const res = await axios.post("http://localhost:3001/dogs", payload);
+                const data = res.data;
+                return await dispatch({
+                    type: ADD_DOG,
+                    payload: data
+                });
+            } catch (error) {
+                console.log(error)
+            }
         };
     };
     export const cleanDetail = () => {

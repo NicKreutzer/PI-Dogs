@@ -117,11 +117,8 @@ const reducer = (state = initialState, action) => {
                 dogDetail: action.payload,
             };
         case ADD_DOG:
-            const newDog = state.allDogs.slice();
-            newDog.push(action.payload);
             return {
                 ...state,
-                allDogs: newDog
             };
         case CLEAN_DETAIL:
             return {
